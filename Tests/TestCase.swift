@@ -2,6 +2,19 @@ import XCTest
 @testable import Tuplé
 
 final class TestCase: XCTestCase {
+  func test_map() {
+    let tuple4 = (0, 1, 2, 3)
+    XCTAssert(
+      map(tuple4) { $0 + 1 } == (1, 2, 3, 4)
+    )
+    XCTAssert(
+      map(prefix(tuple4)) { $0 + 1 } == (1, 2, 3)
+    )
+    XCTAssert(
+      map(prefix(suffix(tuple4))) { $0 + 1 } == (2, 3)
+    )
+  }
+
   func test_prefix() {
     let tuple2 = (0, 1)
     let tuple3 = (0, 1, 2)
