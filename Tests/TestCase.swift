@@ -10,4 +10,13 @@ final class TestCase: XCTestCase {
     XCTAssert(prefix(tuple4) == tuple2)
     XCTAssert(prefix(tuple4) == tuple3)
   }
+
+  func test_suffix() {
+    let tuple2 = (2, 3)
+    let tuple3 = (1, 2, 3)
+    XCTAssert(suffix(tuple3) == tuple2)
+    let tuple4 = (0, 1, 2, 3)
+    XCTAssert(suffix(tuple4) == tuple2)
+    XCTAssert(suffix(tuple4) == tuple3)
+  }
 }
