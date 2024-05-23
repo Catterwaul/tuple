@@ -38,6 +38,12 @@ final class TestCase: XCTestCase {
     ƒ(removeLabels(tuple4))
   }
 
+  func test_reverse() {
+    XCTAssert(reverse((1, 2)) == (2, 1))
+    XCTAssert(reverse((1, 2, 3)) == (3, 2, 1))
+    XCTAssert(reverse((1, 2, 3, 4)) == (4, 3, 2, 1))
+  }
+
   func test_suffix() {
     let tuple2 = (2, 3)
     let tuple3 = (1, 2, 3)
