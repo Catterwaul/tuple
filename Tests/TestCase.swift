@@ -24,6 +24,20 @@ final class TestCase: XCTestCase {
     XCTAssert(prefix(tuple4) == tuple3)
   }
 
+  func test_removeLabels() {
+    let tuple2 = (🐱: (), ())
+    func ƒ(_: (🐶: some Any, some Any)) { }
+    ƒ(removeLabels(tuple2))
+
+    let tuple3 = (🐱: (), (), ())
+    func ƒ(_: (🐶: some Any, some Any, some Any)) { }
+    ƒ(removeLabels(tuple3))
+
+    let tuple4 = (🐱: (), (), (), ())
+    func ƒ(_: (🐶: some Any, some Any, some Any, some Any)) { }
+    ƒ(removeLabels(tuple4))
+  }
+
   func test_suffix() {
     let tuple2 = (2, 3)
     let tuple3 = (1, 2, 3)
