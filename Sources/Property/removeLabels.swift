@@ -1,4 +1,4 @@
-/// Remove the labels from a tuple.
+/// A tuple with its labels removed.
 /// - Parameter tuple: A tuple that may have at least one label.
 @inlinable public func removeLabels<Element0, Element1>(
   _ tuple: (Element0, Element1)
@@ -6,7 +6,7 @@
   tuple
 }
 
-/// Remove the labels from a tuple.
+/// A tuple with its labels removed.
 /// - Parameter tuple: A tuple that may have at least one label.
 @inlinable public func removeLabels<Element0, Element1, Element2>(
   _ tuple: (Element0, Element1, Element2)
@@ -15,7 +15,7 @@
 }
 
 
-/// Remove the labels from a tuple.
+/// A tuple with its labels removed.
 /// - Parameter tuple: A tuple that may have at least one label.
 @inlinable public func removeLabels<Element0, Element1, Element2, Element3>(
   _ tuple: (Element0, Element1, Element2, Element3)
