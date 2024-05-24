@@ -52,7 +52,7 @@
     (Input) -> Transformed2
   )
 ) -> (Input) -> (Transformed0, Transformed1, Transformed2) {
-  { append(callAsFunction(prefix(transforms))($0), transforms.2($0)) }
+  { append(callAsFunction(prefix(transforms))($0))(transforms.2($0)) }
 }
 
 /// Call multiple functions on one input.
@@ -63,7 +63,7 @@
     (Input) throws -> Transformed2
   )
 ) -> (Input) throws -> (Transformed0, Transformed1, Transformed2) {
-  { try append(callAsFunction(prefix(transforms))($0), transforms.2($0)) }
+  { try append(callAsFunction(prefix(transforms))($0))(transforms.2($0)) }
 }
 
 // MARK: - 4-tuple
@@ -77,7 +77,7 @@
     (Input) -> Transformed3
   )
 ) -> (Input) -> (Transformed0, Transformed1, Transformed2, Transformed3) {
-  { append(callAsFunction(prefix(transforms))($0), transforms.3($0)) }
+  { append(callAsFunction(prefix(transforms))($0))(transforms.3($0)) }
 }
 
 /// Call multiple functions on one input.
@@ -89,5 +89,5 @@
     (Input) throws -> Transformed3
   )
 ) -> (Input) throws -> (Transformed0, Transformed1, Transformed2, Transformed3) {
-  { try append(callAsFunction(prefix(transforms))($0), transforms.3($0)) }
+  { try append(callAsFunction(prefix(transforms))($0))(transforms.3($0)) }
 }
