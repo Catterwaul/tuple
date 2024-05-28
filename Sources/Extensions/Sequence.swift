@@ -1,3 +1,4 @@
+/// Tuples created from some of the elements of sequences.
 public extension Sequence {
   /// A tuple containing the initial 2 elements of the sequence.
   ///

@@ -22,7 +22,7 @@
 
 // MARK: - 2-tuple
 
-/// Call multiple functions on one input.
+/// Call a 2-tuple of functions on one input.
 @inlinable public func callAsFunction<Input, Transformed0, Transformed1>(
   _ transforms: (
     (Input) -> Transformed0,
@@ -32,7 +32,7 @@
   { (transforms.0($0), transforms.1($0)) }
 }
 
-/// Call multiple functions on one input.
+/// Call a 2-tuple of functions on one input (at least one of which `throws`).
 @inlinable public func callAsFunction<Input, Transformed0, Transformed1>(
   _ transforms: (
     (Input) throws -> Transformed0,
@@ -44,7 +44,7 @@
 
 // MARK: - 3-tuple
 
-/// Call multiple functions on one input.
+/// Call a 3-tuple of functions on one input.
 @inlinable public func callAsFunction<Input, Transformed0, Transformed1, Transformed2>(
   _ transforms: (
     (Input) -> Transformed0,
@@ -55,7 +55,7 @@
   { append(callAsFunction(prefix(transforms))($0))(transforms.2($0)) }
 }
 
-/// Call multiple functions on one input.
+/// Call a 3-tuple of functions on one input (at least one of which `throws`).
 @inlinable public func callAsFunction<Input, Transformed0, Transformed1, Transformed2>(
   _ transforms: (
     (Input) throws -> Transformed0,
@@ -68,7 +68,7 @@
 
 // MARK: - 4-tuple
 
-/// Call multiple functions on one input.
+/// Call a 4-tuple of functions on one input.
 @inlinable public func callAsFunction<Input, Transformed0, Transformed1, Transformed2, Transformed3>(
   _ transforms: (
     (Input) -> Transformed0,
@@ -80,7 +80,7 @@
   { append(callAsFunction(prefix(transforms))($0))(transforms.3($0)) }
 }
 
-/// Call multiple functions on one input.
+/// Call a 4-tuple of functions on one input (at least one of which `throws`).
 @inlinable public func callAsFunction<Input, Transformed0, Transformed1, Transformed2, Transformed3>(
   _ transforms: (
     (Input) throws -> Transformed0,
