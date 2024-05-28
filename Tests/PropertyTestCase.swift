@@ -26,9 +26,9 @@ final class TestCase: XCTestCase {
   }
 
   func test_reverse() {
-    XCTAssert(reverse((1, 2)) == (2, 1))
-    XCTAssert(reverse((1, 2, 3)) == (3, 2, 1))
-    XCTAssert(reverse((1, 2, 3, 4)) == (4, 3, 2, 1))
+    XCTAssert(reversed((1, "2")) == ("2", 1))
+    XCTAssert(reversed((1, 2, 3)) == (3, 2, 1))
+    XCTAssert(reversed((1, 2, 3, 4)) == (4, 3, 2, 1))
   }
 
   func test_suffix() {
