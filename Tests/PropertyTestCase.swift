@@ -14,15 +14,15 @@ final class TestCase: XCTestCase {
   func test_removeLabels() {
     let tuple2 = (🐱: (), ())
     func ƒ(_: (🐶: some Any, some Any)) { }
-    ƒ(removeLabels(tuple2))
+    ƒ(unlabeled(tuple2))
 
     let tuple3 = (🐱: (), (), ())
     func ƒ(_: (🐶: some Any, some Any, some Any)) { }
-    ƒ(removeLabels(tuple3))
+    ƒ(unlabeled(tuple3))
 
     let tuple4 = (🐱: (), (), (), ())
     func ƒ(_: (🐶: some Any, some Any, some Any, some Any)) { }
-    ƒ(removeLabels(tuple4))
+    ƒ(unlabeled(tuple4))
   }
 
   func test_reverse() {
