@@ -1,23 +1,32 @@
 /// Tuples created from some of the elements of sequences.
 public extension Sequence {
+// MARK: - 2-tuple
+  typealias Tuple2 = Vectuple2<Element>
+  
   /// A tuple containing the initial 2 elements of the sequence.
   ///
-  /// - Throws: `Tuplé.Error.incorrectElementCount` if there are not enough elements to populate the tuple.
-  func tuplePrefix() throws -> Tuple2<Element> { try tuple2Prefix().tuple }
+  /// - Throws: ``Error.incorrectElementCount`` if there are not enough elements to populate the tuple.
+  func tuplePrefix() throws -> Tuple2 { try tuple2Prefix().tuple }
+
+// MARK: - 3-tuple
+  typealias Tuple3 = Vectuple3<Element>
 
   /// A tuple containing the initial 3 elements of the sequence.
   ///
-  /// - Throws: `Tuplé.Error.incorrectElementCount` if there are not enough elements to populate the tuple.
-  func tuplePrefix() throws -> Tuple3<Element> { try tuple3Prefix().tuple }
+  /// - Throws: ``Error.incorrectElementCount`` if there are not enough elements to populate the tuple.
+  func tuplePrefix() throws -> Tuple3 { try tuple3Prefix().tuple }
+
+// MARK: - 4-tuple
+  typealias Tuple4 = Vectuple4<Element>
 
   /// A tuple containing the initial 4 elements of the sequence.
   ///
-  /// - Throws: `Tuplé.Error.incorrectElementCount` if there are not enough elements to populate the tuple.
-  func tuplePrefix() throws -> Tuple4<Element> { try tuple4Prefix().tuple }
+  /// - Throws: ``Error.incorrectElementCount`` if there are not enough elements to populate the tuple.
+  func tuplePrefix() throws -> Tuple4 { try tuple4Prefix().tuple }
 }
 
 private extension Sequence {
-  private func tuple2Prefix() throws -> (tuple: Tuple2<Element>, getNext: () -> Element?) {
+  private func tuple2Prefix() throws -> (tuple: Vectuple2<Element>, getNext: () -> Element?) {
     var iterator = makeIterator()
     let getNext = { iterator.next() }
 
@@ -28,7 +37,7 @@ private extension Sequence {
     return ((_0, _1), getNext)
   }
 
-  private func tuple3Prefix() throws -> (tuple: Tuple3<Element>, getNext: () -> Element?) {
+  private func tuple3Prefix() throws -> (tuple: Vectuple3<Element>, getNext: () -> Element?) {
     do {
       let (tuple, getNext) = try tuple2Prefix()
 
@@ -41,7 +50,7 @@ private extension Sequence {
     }
   }
 
-  private func tuple4Prefix() throws -> (tuple: Tuple4<Element>, getNext: () -> Element?) {
+  private func tuple4Prefix() throws -> (tuple: Vectuple4<Element>, getNext: () -> Element?) {
     do {
       let (tuple, getNext) = try tuple3Prefix()
 

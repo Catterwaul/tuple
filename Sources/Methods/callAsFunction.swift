@@ -81,7 +81,7 @@
     (Input) -> Transformed3
   )
 ) -> (Input) -> (Transformed0, Transformed1, Transformed2, Transformed3) {
-  { let prefix: (_, _, _) = callAsFunction(prefix(transforms))($0)
+  { let prefix: Tuple3 = callAsFunction(prefix(transforms))($0)
     return appending(prefix)(transforms.3($0))
   }
 }
@@ -95,7 +95,7 @@
     (Input) throws -> Transformed3
   )
 ) -> (Input) throws -> (Transformed0, Transformed1, Transformed2, Transformed3) {
-  { let prefix: (_, _, _) = try callAsFunction(prefix(transforms))($0)
+  { let prefix: Tuple3 = try callAsFunction(prefix(transforms))($0)
     return try appending(prefix)(transforms.3($0))
   }
 }
