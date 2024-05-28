@@ -35,7 +35,7 @@ private extension Sequence {
       guard let element = getNext()
       else { throw Error.incorrectElementCount(expected: 3, actual: 2) }
 
-      return (append(tuple)(element), getNext)
+      return (appending(tuple)(element), getNext)
     } catch Error.incorrectElementCount(_, let actual) {
       throw Error.incorrectElementCount(expected: 3, actual: actual)
     }
@@ -48,7 +48,7 @@ private extension Sequence {
       guard let element = getNext()
       else { throw Error.incorrectElementCount(expected: 4, actual: 3) }
 
-      return (append(tuple)(element), getNext)
+      return (appending(tuple)(element), getNext)
     } catch Error.incorrectElementCount(_, let actual) {
       throw Error.incorrectElementCount(expected: 4, actual: actual)
     }

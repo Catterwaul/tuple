@@ -52,7 +52,9 @@
     (Input) -> Transformed2
   )
 ) -> (Input) -> (Transformed0, Transformed1, Transformed2) {
-  { append(callAsFunction(prefix(transforms))($0))(transforms.2($0)) }
+  { let prefix = callAsFunction(prefix(transforms))($0)
+    return appending(prefix)(transforms.2($0))
+  }
 }
 
 /// Call a 3-tuple of functions on one input (at least one of which `throws`).
@@ -63,7 +65,9 @@
     (Input) throws -> Transformed2
   )
 ) -> (Input) throws -> (Transformed0, Transformed1, Transformed2) {
-  { try append(callAsFunction(prefix(transforms))($0))(transforms.2($0)) }
+  { let prefix = try callAsFunction(prefix(transforms))($0)
+    return try appending(prefix)(transforms.2($0))
+  }
 }
 
 // MARK: - 4-tuple
@@ -77,7 +81,9 @@
     (Input) -> Transformed3
   )
 ) -> (Input) -> (Transformed0, Transformed1, Transformed2, Transformed3) {
-  { append(callAsFunction(prefix(transforms))($0))(transforms.3($0)) }
+  { let prefix: (_, _, _) = callAsFunction(prefix(transforms))($0)
+    return appending(prefix)(transforms.3($0))
+  }
 }
 
 /// Call a 4-tuple of functions on one input (at least one of which `throws`).
@@ -89,5 +95,7 @@
     (Input) throws -> Transformed3
   )
 ) -> (Input) throws -> (Transformed0, Transformed1, Transformed2, Transformed3) {
-  { try append(callAsFunction(prefix(transforms))($0))(transforms.3($0)) }
+  { let prefix: (_, _, _) = try callAsFunction(prefix(transforms))($0)
+    return try appending(prefix)(transforms.3($0))
+  }
 }

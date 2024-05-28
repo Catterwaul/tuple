@@ -18,8 +18,9 @@
 @inlinable public func map<Element, Transformed>(
   _ elements: Tuple3<Element>
 ) -> ((Element) -> Transformed) -> Tuple3<Transformed> {
-  { transform in 
-    append(map(prefix(elements))(transform))(transform(elements.2))
+  { transform in
+    let prefix = map(prefix(elements))(transform)
+    return appending(prefix)(transform(elements.2))
   }
 }
 
@@ -28,7 +29,8 @@
   _ elements: Tuple3<Element>
 ) -> ((Element) throws -> Transformed) throws -> Tuple3<Transformed> {
   { transform in
-    try append(map(prefix(elements))(transform))(transform(elements.2))
+    let prefix = try map(prefix(elements))(transform)
+    return try appending(prefix)(transform(elements.2))
   }
 }
 
@@ -38,12 +40,18 @@
 @inlinable public func map<Element, Transformed>(
   _ elements: Tuple4<Element>
 ) -> ((Element) -> Transformed) -> Tuple4<Transformed> {
-  { transform in append(map(prefix(elements))(transform))(transform(elements.3)) }
+  { transform in
+    let prefix: Tuple3 = map(prefix(elements))(transform)
+    return appending(prefix)(transform(elements.3))
+  }
 }
 
 /// Transform each element of a 4-tuple.
 @_disfavoredOverload @inlinable public func map<Element, Transformed>(
   _ elements: Tuple4<Element>
 ) -> ((Element) throws -> Transformed) throws -> Tuple4<Transformed> {
-  { transform in try append(map(prefix(elements))(transform))(transform(elements.3)) }
+  { transform in
+    let prefix: Tuple3 = try map(prefix(elements))(transform)
+    return try appending(prefix)(transform(elements.3))
+  }
 }
