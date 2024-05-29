@@ -5,7 +5,7 @@ public extension Sequence {
   
   /// A tuple containing the initial 2 elements of the sequence.
   ///
-  /// - Throws: ``Error.incorrectElementCount`` if there are not enough elements to populate the tuple.
+  /// - Throws: `Error.incorrectElementCount` if there are not enough elements to populate the tuple.
   func tuplePrefix() throws -> Tuple2 { try tuple2Prefix().tuple }
 
 // MARK: - 3-tuple
@@ -13,7 +13,7 @@ public extension Sequence {
 
   /// A tuple containing the initial 3 elements of the sequence.
   ///
-  /// - Throws: ``Error.incorrectElementCount`` if there are not enough elements to populate the tuple.
+  /// - Throws: `Error.incorrectElementCount` if there are not enough elements to populate the tuple.
   func tuplePrefix() throws -> Tuple3 { try tuple3Prefix().tuple }
 
 // MARK: - 4-tuple
@@ -21,7 +21,7 @@ public extension Sequence {
 
   /// A tuple containing the initial 4 elements of the sequence.
   ///
-  /// - Throws: ``Error.incorrectElementCount`` if there are not enough elements to populate the tuple.
+  /// - Throws: `Error.incorrectElementCount` if there are not enough elements to populate the tuple.
   func tuplePrefix() throws -> Tuple4 { try tuple4Prefix().tuple }
 }
 

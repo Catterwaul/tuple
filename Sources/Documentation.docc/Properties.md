@@ -27,7 +27,7 @@ Say that we want to get the [`count`](https://developer.apple.com/documentation/
 ["🧛🏼‍♂️"].count
 ```
 
-But a closure can represent the same concept, and [a key path expression can be used as a closure](https://github.com/apple/swift-evolution/blob/main/proposals/0249-key-path-literal-function-expressions.md) :
+But a closure can represent the same concept. And [a key path expression can be used as a closure](https://github.com/apple/swift-evolution/blob/main/proposals/0249-key-path-literal-function-expressions.md) :
 
 ```swift
 let count: ([String]) -> Int

@@ -44,7 +44,7 @@ let instance = [1, 2, 3]
 instance.method()
 ```
 
-But `method` is also available as a `static` method, on `Array`, and can alternatively be called like this: 
+But it's also available as a `static` method, on `Array`, and can alternatively be called like this: 
 
 ```swift
 Array.method(instance)()
@@ -58,14 +58,14 @@ Array.map(instance)() { $0 + 1 }
 
 That's how the package authors think about the functions cataloged below.
 
-- Note: *It's unfortunately not possible to remove the "`()`" before trailing closures without **real** instance methods. The limitation has been logged as a bug for years.*  
+- Note: It's unfortunately not possible to remove the "`()`" before trailing closures without access to **real** instance methods. The limitation has been logged as a bug for years.  
 
 
 ## Topics
 
-### append
-- ``append(_:)-19d48``
-- ``append(_:)-2p4yb``
+### appending
+- ``appending(_:)-3nv0z``
+- ``appending(_:)-3mlku``
 
 ### callAsFunction
 - ``callAsFunction(_:)-10f8r``
