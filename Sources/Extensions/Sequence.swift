@@ -1,6 +1,7 @@
 /// Tuples created from some of the elements of sequences.
 public extension Sequence {
 // MARK: - 2-tuple
+  /// A homogeneous 2-tuple of this `Sequence`'s `Element`.
   typealias Tuple2 = Vectuple2<Element>
   
   /// A tuple containing the initial 2 elements of the sequence.
@@ -9,6 +10,7 @@ public extension Sequence {
   func tuplePrefix() throws -> Tuple2 { try tuple2Prefix().tuple }
 
 // MARK: - 3-tuple
+  /// A homogeneous 3-tuple of this `Sequence`'s `Element`.
   typealias Tuple3 = Vectuple3<Element>
 
   /// A tuple containing the initial 3 elements of the sequence.
@@ -17,6 +19,7 @@ public extension Sequence {
   func tuplePrefix() throws -> Tuple3 { try tuple3Prefix().tuple }
 
 // MARK: - 4-tuple
+  /// A homogeneous 4-tuple of this `Sequence`'s `Element`.
   typealias Tuple4 = Vectuple4<Element>
 
   /// A tuple containing the initial 4 elements of the sequence.
