@@ -4,7 +4,7 @@ Functions that would be instance methods if tuples could be extended.
 
 ## 
 
-Some of the functions in this package should be considered "instance methods". If tuples were a named type, we could extend them with real methods that  incorporate dot syntax.
+Some of the functions in this package should be considered "instance methods". If tuples were a named type, we could extend them with real methods that incorporate dot syntax.
 
 For example, to add 1 to a tuple of integers, we'd *like* to be able to write:  
 
