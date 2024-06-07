@@ -45,9 +45,9 @@ That's how the package authors think about the functions cataloged below.
 - ``prefix(_:)-7o0x3``
 
 ### reversed
-- ``reversed(_:)-5iq4g``
-- ``reversed(_:)-3qjbt``
 - ``reversed(_:)-8btr4``
+- ``reversed(_:)-3qjbt``
+- ``reversed(_:)-5iq4g``
 
 ### suffix
 - ``suffix(_:)-9ju08``

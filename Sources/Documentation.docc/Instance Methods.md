@@ -64,8 +64,8 @@ That's how the package authors think about the functions cataloged below.
 ## Topics
 
 ### appending
-- ``appending(_:)-3nv0z``
 - ``appending(_:)-3mlku``
+- ``appending(_:)-3nv0z``
 
 ### callAsFunction
 - ``callAsFunction(_:)-10f8r``
