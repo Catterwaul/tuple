@@ -4,7 +4,7 @@ Functions that would be properties if tuples could be extended.
 
 ## 
 
-Some of the functions in this package should be considered "properties". If tuples could be extended, these "properties" would use dot syntax, and no trailing parentheses.
+Some of the functions in this package should be considered "properties". If tuples were a named type, we could extend them to add real properties that use dot syntax, and no trailing parentheses.
 
 For example, to get a "reversed" version of a tuple, we'd *like* to be able to write:  
 
@@ -21,7 +21,7 @@ reversed(tuple)
 
 #### Recommended Mental Model for "Tuple Properties": Key Path Closures
 
-Say that we want to get the [`count`](https://developer.apple.com/documentation/swift/collection/count-4l4qk) of a `String Array`. Because types and protocols can be extended, Swift provides that functionality using this syntax: 
+Say that we want to get the [`count`](https://developer.apple.com/documentation/swift/collection/count-4l4qk) of a `String Array`. Because `Array` is a named type, Swift provides that functionality using this syntax: 
 
 ```swift
 ["🧛🏼‍♂️"].count

@@ -4,7 +4,7 @@ Shorthand syntax for tuples.
 
 ## 
 
-Say you want the initial elements of a sequence, as a tuple. You *can* disambiguate the overloads of `tuplePrefix` without type aliases, but even with type placeholders, that's not the easiest thing to make sense of, or to ensure it's been written correctly:
+Say you want the initial elements of a sequence, as a tuple. You *can* disambiguate the overloads of `tuplePrefix` without type aliases. But even with type placeholders, that's not the easiest thing to make sense of, or to ensure it's been written correctly:
 
 ```swift
 let sequence = 1...5
@@ -30,7 +30,7 @@ try sequence.tuplePrefix() as Vectuple4
 
 ### Count Suffix in Names
 
-All of these type aliases end with a number. But, for example, a `Tuple3` does not represent something called a "Tuple 3." Instead, its real name is "3-Tuple". As with most programming languages, you just can't use numbers at the beginning, or hyphens at all, for type names, in Swift. The common convention is to move the number to the end, instead. We're sticking with that.
+All of these type aliases end with a number. But, for example, a `Tuple3` does not represent something called a "Tuple 3." Instead, its real name is "3-Tuple". In Swift, as with most programming languages, you just can't use numbers at the beginning, or hyphens at all, for type names. The common convention is to move the number to the end, instead. We're sticking with that.
 
 ## Topics
 

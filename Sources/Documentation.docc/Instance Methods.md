@@ -4,7 +4,7 @@ Functions that would be instance methods if tuples could be extended.
 
 ## 
 
-Some of the functions in this package should be considered "instance methods". If tuples could be extended, these "methods" would incorporate dot syntax.
+Some of the functions in this package should be considered "instance methods". If tuples were a named type, we could extend them with real methods that  incorporate dot syntax.
 
 For example, to add 1 to a tuple of integers, we'd *like* to be able to write:  
 
@@ -21,7 +21,7 @@ map(tuple)() { $0 + 1 }
 
 #### Recommended Mental Model for "Tuple Instance Methods": Unsugared Instance Methods 
 
-Say that we want to use [`map`](https://developer.apple.com/documentation/swift/collection/map(_:)) on an `Int Array`. Because types and protocols can be extended, Swift provides that functionality using this syntax: 
+Say that we want to use [`map`](https://developer.apple.com/documentation/swift/collection/map(_:)) on an `Int Array`. Because `Array` is a named type, Swift provides that functionality using this syntax: 
 
 ```swift
 [1, 2, 3].map { $0 + 1 }
