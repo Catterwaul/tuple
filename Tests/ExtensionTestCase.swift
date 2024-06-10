@@ -16,7 +16,7 @@ final class ExtensionTestCase: XCTestCase {
       XCTAssertThrowsError(try tuple(repeatElement((), count: count))) { error in
         XCTAssertEqual(
           error as? Error,
-          Error.incorrectElementCount(expected: expected, actual: count)
+          .incorrectElementCount(expected: expected, actual: count)
         )
       }
     }

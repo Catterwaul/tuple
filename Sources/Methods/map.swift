@@ -6,9 +6,9 @@
 }
 
 /// Transform each element of a 2-tuple.
-@_disfavoredOverload @inlinable public func map<Element, Transformed>(
+@_disfavoredOverload @inlinable public func map<Element, Transformed, Error>(
   _ elements: Vectuple2<Element>
-) -> ((Element) throws -> Transformed) throws -> Vectuple2<Transformed> {
+) -> ((Element) throws(Error) -> Transformed) throws(Error) -> Vectuple2<Transformed> {
   { transform in try (transform(elements.0), transform(elements.1)) }
 }
 
@@ -25,9 +25,9 @@
 }
 
 /// Transform each element of a 3-tuple.
-@_disfavoredOverload @inlinable public func map<Element, Transformed>(
+@_disfavoredOverload @inlinable public func map<Element, Transformed, Error>(
   _ elements: Vectuple3<Element>
-) -> ((Element) throws -> Transformed) throws -> Vectuple3<Transformed> {
+) -> ((Element) throws(Error) -> Transformed) throws(Error) -> Vectuple3<Transformed> {
   { transform in
     let prefix = try map(prefix(elements))(transform)
     return try appending(prefix)(transform(elements.2))
@@ -47,9 +47,9 @@
 }
 
 /// Transform each element of a 4-tuple.
-@_disfavoredOverload @inlinable public func map<Element, Transformed>(
+@_disfavoredOverload @inlinable public func map<Element, Transformed, Error>(
   _ elements: Vectuple4<Element>
-) -> ((Element) throws -> Transformed) throws -> Vectuple4<Transformed> {
+) -> ((Element) throws(Error) -> Transformed) throws(Error) -> Vectuple4<Transformed> {
   { transform in
     let prefix: Tuple3 = try map(prefix(elements))(transform)
     return try appending(prefix)(transform(elements.3))
