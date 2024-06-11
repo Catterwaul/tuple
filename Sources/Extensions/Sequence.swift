@@ -28,45 +28,62 @@ public extension Sequence {
   func tuplePrefix() throws(Error) -> Tuple4 { try tuple4Prefix().tuple }
 }
 
+// MARK: - private
 private extension Sequence {
   private func tuple2Prefix() throws(Error) -> (tuple: Tuple2, getNext: () -> Element?) {
     var iterator = makeIterator()
     let getNext = { iterator.next() }
+    let error = Error.Init(expected: 2)
 
     guard let _0 = getNext()
-    else { throw .incorrectElementCount(expected: 2, actual: 0) }
+    else { throw error(actual: 0) }
     guard let _1 = getNext()
-    else { throw .incorrectElementCount(expected: 2, actual: 1) }
+    else { throw error(actual: 1) }
     return ((_0, _1), getNext)
   }
 
   private func tuple3Prefix() throws(Error) -> (tuple: Tuple3, getNext: () -> Element?) {
     let tuple: Tuple2, getNext: () -> Element?
+    let error = Error.Init(expected: 3)
 
     do {
       (tuple, getNext) = try tuple2Prefix()
     } catch .incorrectElementCount(_, let actual) {
-      throw .incorrectElementCount(expected: 3, actual: actual)
+      throw error(actual: actual)
     }
 
     guard let element = getNext()
-    else { throw .incorrectElementCount(expected: 3, actual: 2) }
+    else { throw error(actual: 2) }
 
     return (appending(tuple)(element), getNext)
   }
 
   private func tuple4Prefix() throws(Error) -> (tuple: Tuple4, getNext: () -> Element?) {
     let tuple: Tuple3, getNext: () -> Element?
+    let error = Error.Init(expected: 4)
 
     do {
       (tuple, getNext) = try tuple3Prefix()
     } catch .incorrectElementCount(_, let actual) {
-      throw .incorrectElementCount(expected: 4, actual: actual)
+      throw error(actual: actual)
     }
 
     guard let element = getNext()
-    else { throw .incorrectElementCount(expected: 4, actual: 3) }
+    else { throw error(actual: 3) }
 
     return (appending(tuple)(element), getNext)
+  }
+}
+
+private extension Error {
+  /// A custom  `Error` initializer.
+  ///
+  /// - Note: It's not a closure because those don't support argument labels.
+  struct Init {
+    let expected: Int
+
+    func callAsFunction(actual: Int) -> Error {
+      .incorrectElementCount(expected: expected, actual: actual)
+    }
   }
 }
