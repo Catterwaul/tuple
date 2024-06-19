@@ -32,9 +32,7 @@ import Tuplé
       \.s as (🇪🇨) -> _
     )
 
-    #expect(throws: Never.self) {
-      try callAsFunction(getThrowingProperties)(🇪🇨())
-    }
+    _ = try callAsFunction(getThrowingProperties)(🇪🇨())
   }
 
   @Test func test_map() throws {

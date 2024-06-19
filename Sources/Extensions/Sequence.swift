@@ -1,3 +1,5 @@
+import Thrappture
+
 /// Tuples created from some of the elements of sequences.
 public extension Sequence {
 // MARK: - 2-tuple
@@ -5,85 +7,51 @@ public extension Sequence {
   typealias Tuple2 = Vectuple2<Element>
   
   /// A tuple containing the initial 2 elements of the sequence.
-  ///
-  /// - Throws: `.incorrectElementCount` if there are not enough elements to populate the tuple.
-  func tuplePrefix() throws(Error) -> Tuple2 { try tuple2Prefix().tuple }
+  func tuplePrefix() throws(MissingElementsError) -> Tuple2 { try _tuplePrefix() }
 
 // MARK: - 3-tuple
   /// A homogeneous 3-tuple of this `Sequence`'s `Element`.
   typealias Tuple3 = Vectuple3<Element>
 
   /// A tuple containing the initial 3 elements of the sequence.
-  ///
-  /// - Throws: `.incorrectElementCount` if there are not enough elements to populate the tuple.
-  func tuplePrefix() throws(Error) -> Tuple3 { try tuple3Prefix().tuple }
+  func tuplePrefix() throws(MissingElementsError) -> Tuple3 { try _tuplePrefix() }
 
 // MARK: - 4-tuple
   /// A homogeneous 4-tuple of this `Sequence`'s `Element`.
   typealias Tuple4 = Vectuple4<Element>
 
   /// A tuple containing the initial 4 elements of the sequence.
-  ///
-  /// - Throws: `.incorrectElementCount` if there are not enough elements to populate the tuple.
-  func tuplePrefix() throws(Error) -> Tuple4 { try tuple4Prefix().tuple }
+  func tuplePrefix() throws(MissingElementsError) -> Tuple4 { try _tuplePrefix() }
 }
 
 // MARK: - private
 private extension Sequence {
-  private func tuple2Prefix() throws(Error) -> (tuple: Tuple2, getNext: () -> Element?) {
+  /// - Note: This will be necessary until parameter packs support homogeneity.
+  func _tuplePrefix<each Element>() throws(MissingElementsError) -> (repeat each Element) {
     var iterator = makeIterator()
-    let getNext = { iterator.next() }
-    let error = Error.Init(expected: 2)
-
-    guard let _0 = getNext()
-    else { throw error(actual: 0) }
-    guard let _1 = getNext()
-    else { throw error(actual: 1) }
-    return ((_0, _1), getNext)
-  }
-
-  private func tuple3Prefix() throws(Error) -> (tuple: Tuple3, getNext: () -> Element?) {
-    let tuple: Tuple2, getNext: () -> Element?
-    let error = Error.Init(expected: 3)
+    var actualCount = 0
 
     do {
-      (tuple, getNext) = try tuple2Prefix()
-    } catch .incorrectElementCount(_, let actual) {
-      throw error(actual: actual)
+      func next() throws -> Self.Element {
+        let next = try iterator.next().wrappedValue()
+        actualCount += 1
+        return next
+      }
+      return (repeat try next() as! each Element)
+    } catch {
+      throw MissingElementsError(actualCount: actualCount)
     }
-
-    guard let element = getNext()
-    else { throw error(actual: 2) }
-
-    return (appending(tuple)(element), getNext)
-  }
-
-  private func tuple4Prefix() throws(Error) -> (tuple: Tuple4, getNext: () -> Element?) {
-    let tuple: Tuple3, getNext: () -> Element?
-    let error = Error.Init(expected: 4)
-
-    do {
-      (tuple, getNext) = try tuple3Prefix()
-    } catch .incorrectElementCount(_, let actual) {
-      throw error(actual: actual)
-    }
-
-    guard let element = getNext()
-    else { throw error(actual: 3) }
-
-    return (appending(tuple)(element), getNext)
   }
 }
 
-private extension Error {
-  /// A custom  `Error` initializer.
-  ///
-  /// - Note: It's not a closure because those don't support argument labels.
-  struct Init {
-    let expected: Int
-
-    func callAsFunction(actual: Int) -> Error {
-      .incorrectElementCount(expected: expected, actual: actual)
-    }
+// MARK: - MissingElementsError
+/// A representation of there not being enough elements to populate a tuple.
+public struct MissingElementsError: Error & Equatable {
+  /// - Parameter actualCount: How many elements are actually present.
+  public init(actualCount: Int) {
+    self.actualCount = actualCount
   }
+
+  /// How many elements are actually present.
+  let actualCount: Int
 }

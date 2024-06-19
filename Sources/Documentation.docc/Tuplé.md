@@ -37,4 +37,4 @@ You've got the source code here, so aside from reading this documentation, see t
 - <doc:Properties>
 - <doc:Instance-Methods>
 - ``Swift/Sequence``
-- ``Error``
+- ``MissingElementsError``

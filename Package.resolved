@@ -1,5 +1,5 @@
 {
-  "originHash" : "2815fcf1d7b5a0e1d1be60706a4f8d52b1410d2bf5528dc6ac906abb2d494076",
+  "originHash" : "3e4e6ec421457c070b4187fdde5f414614448571bf9545dc8ace8e97bd0090dc",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "thrappture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Catterwaul/Thrappture",
+      "state" : {
+        "branch" : "main",
+        "revision" : "89e73c439e80f45a74e27cfef726d28f0b249484"
       }
     }
   ],
