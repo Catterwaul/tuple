@@ -1,8 +1,8 @@
-import XCTest
+import Testing
 import Tuplé
 
-final class MethodTestCase: XCTestCase {
-  func test_callAsFunction() throws {
+@Suite private struct MethodTests {
+  @Test func test_callAsFunction() throws {
     struct 🇪🇨: Equatable {
       // MARK: Equatables
       let eq = "🎛"
@@ -23,7 +23,7 @@ final class MethodTestCase: XCTestCase {
       }
     }
 
-    XCTAssertEqual(🇪🇨(), 🇪🇨())
+    #expect(🇪🇨() == 🇪🇨())
 
     let getThrowingProperties = (
       \.eq as (🇪🇨) throws -> _,
@@ -31,23 +31,27 @@ final class MethodTestCase: XCTestCase {
       \.al as (🇪🇨) -> _,
       \.s as (🇪🇨) -> _
     )
-    XCTAssertNoThrow(try callAsFunction(getThrowingProperties)(🇪🇨()))
+
+    #expect(throws: Never.self) {
+      try callAsFunction(getThrowingProperties)(🇪🇨())
+    }
   }
 
-  func test_map() {
+  @Test func test_map() throws {
     let tuple4 = (0, 1, 2, 3)
-    XCTAssert(
+
+    #expect(
       map(tuple4)() { $0 + 1 } == (1, 2, 3, 4)
     )
-    XCTAssert(
+    #expect(
       map(prefix(tuple4))() { $0 + 1 } == (1, 2, 3)
     )
-    XCTAssert(
+    #expect(
       map(prefix(suffix(tuple4)))() { $0 + 1 } == (2, 3)
     )
 
     func add1(_ int: Int) throws -> Int { int + 1 }
-    XCTAssert(
+    #expect(
       try map(tuple4)(add1) == (1, 2, 3, 4)
     )
   }

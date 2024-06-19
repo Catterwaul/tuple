@@ -1,17 +1,17 @@
-import XCTest
+import Testing
 import Tuplé
 
-final class TestCase: XCTestCase {
-  func test_prefix() {
+@Suite private struct PropertyTests {
+  @Test func test_prefix() {
     let tuple2 = (0, 1)
     let tuple3 = (0, 1, 2)
-    XCTAssert(prefix(tuple3) == tuple2)
+    #expect(prefix(tuple3) == tuple2)
     let tuple4 = (0, 1, 2, 3)
-    XCTAssert(prefix(tuple4) == tuple2)
-    XCTAssert(prefix(tuple4) == tuple3)
+    #expect(prefix(tuple4) == tuple2)
+    #expect(prefix(tuple4) == tuple3)
   }
 
-  func test_removeLabels() {
+  @Test func removeLabels() {
     let tuple2 = (🐱: (), ())
     func ƒ(_: (🐶: some Any, some Any)) { }
     ƒ(unlabeled(tuple2))
@@ -25,18 +25,18 @@ final class TestCase: XCTestCase {
     ƒ(unlabeled(tuple4))
   }
 
-  func test_reverse() {
-    XCTAssert(reversed((1, "2")) == ("2", 1))
-    XCTAssert(reversed((1, 2, 3)) == (3, 2, 1))
-    XCTAssert(reversed((1, 2, 3, 4)) == (4, 3, 2, 1))
+  @Test func reverse() {
+    #expect(reversed((1, "2")) == ("2", 1))
+    #expect(reversed((1, 2, 3)) == (3, 2, 1))
+    #expect(reversed((1, 2, 3, 4)) == (4, 3, 2, 1))
   }
 
-  func test_suffix() {
+  @Test func test_suffix() {
     let tuple2 = (2, 3)
     let tuple3 = (1, 2, 3)
-    XCTAssert(suffix(tuple3) == tuple2)
+    #expect(suffix(tuple3) == tuple2)
     let tuple4 = (0, 1, 2, 3)
-    XCTAssert(suffix(tuple4) == tuple2)
-    XCTAssert(suffix(tuple4) == tuple3)
+    #expect(suffix(tuple4) == tuple2)
+    #expect(suffix(tuple4) == tuple3)
   }
 }

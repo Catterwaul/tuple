@@ -1,23 +1,24 @@
-import XCTest
+import Testing
 import Tuplé
 
-final class ExtensionTestCase: XCTestCase {
-  func test_Sequence_tuplePrefix() throws {
+@Suite private struct ExtensionTests {
+  @Test func sequence_tuplePrefix() throws {
     let array = [0, 1, 2, 3]
-    XCTAssert(try array.tuplePrefix() == (0, 1))
-    XCTAssert(try array.tuplePrefix() == (0, 1, 2))
-    XCTAssert(try array.tuplePrefix() == (0, 1, 2, 3))
+    #expect(try array.tuplePrefix() == (0, 1))
+    #expect(try array.tuplePrefix() == (0, 1, 2))
+    #expect(try array.tuplePrefix() == (0, 1, 2, 3))
+  }
 
+  @Test func throwError() {
     func test(
       _ tuple: (Repeated<Void>) throws -> some Any,
       expected: Int,
       count: Int
     ) {
-      XCTAssertThrowsError(try tuple(repeatElement((), count: count))) { error in
-        XCTAssertEqual(
-          error as? Error,
-          .incorrectElementCount(expected: expected, actual: count)
-        )
+      #expect {
+        try tuple(repeatElement((), count: count))
+      } throws: { error in
+        error as? Error == .incorrectElementCount(expected: expected, actual: count)
       }
     }
 
