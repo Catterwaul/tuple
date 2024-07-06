@@ -2,6 +2,13 @@ import Testing
 import Tuplé
 
 @Suite private struct PropertyTests {
+  @Test func test_enumerated() {
+    let enumerated = enumerated(("0️⃣", 1, 2.0))
+    #expect(enumerated.0 == (offset: 0, element: "0️⃣"))
+    #expect(enumerated.1 == (offset: 1, element: 1))
+    #expect(enumerated.2 == (offset: 2, element: 2.0))
+  }
+
   @Test func test_prefix() {
     let tuple2 = (0, 1)
     let tuple3 = (0, 1, 2)
