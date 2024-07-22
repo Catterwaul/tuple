@@ -25,11 +25,11 @@ reversed((1, 2))
 
 This package will support arbitrary-count tuples, incorporating the evolution of [parameter packs](https://github.com/apple/swift-evolution/blob/main/proposals/0393-parameter-packs.md), when possible. 
 
-Otherwise, the cap for support is tuples with **4 elements**. This is the size limit found in 3D graphics frameworks such as [RealityKit](https://developer.apple.com/documentation/realitykit) and libraries such as [Spatial](https://developer.apple.com/documentation/spatial).  Supporting visionOS development by filling in tuple-shaped holes in that Apple-provided software is a primary motivator for this package, but it is otherwise unrelated to graphics.
+Otherwise, the cap for support is tuples with **4 elements**. This is the de facto size limit found in 3D graphics frameworks such as [RealityKit](https://developer.apple.com/documentation/realitykit) and libraries such as [SIMD](https://developer.apple.com/documentation/swift/simd-vector-types) and  [Spatial](https://developer.apple.com/documentation/spatial). Supporting visionOS development by filling in tuple-shaped holes in that Apple-provided software is a primary motivator for this package, but it is otherwise unrelated to graphics.
 
 ##### Usage Examples
 
-You've got the source code here, so aside from reading this documentation, see the `Tests` folder for example usage! 😺
+You've got the source code here, so aside from reading this documentation, see the **Tests** folder for example usage! 😺
 
 ## Topics
 
@@ -37,4 +37,3 @@ You've got the source code here, so aside from reading this documentation, see t
 - <doc:Properties>
 - <doc:Instance-Methods>
 - ``Swift/Sequence``
-- ``MissingElementsError``

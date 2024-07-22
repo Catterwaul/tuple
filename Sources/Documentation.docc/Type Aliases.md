@@ -26,11 +26,11 @@ try sequence.tuplePrefix() as Vectuple2
 try sequence.tuplePrefix() as Vectuple4
 ```
 
-…it's often not necessary. A "Vectuple3" ***is*** a `Tuple3`. When the disambiguation only has to do with element count, the extra restriction on homogeneity is implicit.
+…it's often not necessary. A `Vectuple3` ***is*** a `Tuple3`. When the disambiguation only has to do with element count, the extra restriction on homogeneity is implicit.
 
 ### Count Suffix in Names
 
-All of these type aliases end with a number. But, for example, a `Tuple3` does not represent something called a "Tuple 3." Instead, its real name is "3-Tuple". In Swift, as with most programming languages, you just can't use numbers at the beginning, or hyphens at all, for type names. The common convention is to move the number to the end, instead. We're sticking with that.
+All of these type aliases end with a number. But, for example, a `Tuple3` does not represent something actually called a "Tuple 3." Instead, its real name is "3-Tuple". In Swift, as with most programming languages, you just can't use numbers at the beginning, or hyphens at all, for type names. The common convention is to move the number to the end, instead. We're sticking with that.
 
 ## Topics
 

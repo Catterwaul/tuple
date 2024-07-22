@@ -5,6 +5,8 @@
 ## Topics
 
 ### tuplePrefix
-- ``tuplePrefix()-14pph``
-- ``tuplePrefix()-l2vu``
-- ``tuplePrefix()-6cm0w``
+- ``tuplePrefix()-27jga``
+- ``tuplePrefix()-32u8``
+- ``tuplePrefix()-57t96``
+
+- ``MissingElementsError``

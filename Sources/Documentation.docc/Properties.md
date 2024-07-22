@@ -30,14 +30,15 @@ Say that we want to get the [`count`](https://developer.apple.com/documentation/
 But a closure can represent the same concept. And [a key path expression can be used as a closure](https://github.com/apple/swift-evolution/blob/main/proposals/0249-key-path-literal-function-expressions.md) :
 
 ```swift
-let count: ([String]) -> Int
-count = \.count
+let count: ([String]) -> Int = \.count
 count(["🧛🏼‍♂️"])
 ```
 
 That's how the package authors think about the functions cataloged below.
 
 ## Topics
+
+- ``enumerated(_:)``
 
 ### prefix
 - ``prefix(_:)-931zj``

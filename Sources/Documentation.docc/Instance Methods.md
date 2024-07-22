@@ -50,7 +50,7 @@ But it's also available as a `static` method, on `Array`, and can alternatively 
 Array.method(instance)()
 ```
 
-And although you'll need to add a version of `try`, if you actually want the following to compile, `map` from the standard library can similarly be called like so: 
+`map` from the standard library can similarly be called like so: 
 
 ```swift
 Array.map(instance)() { $0 + 1 }
@@ -63,24 +63,10 @@ That's how the package authors think about the functions cataloged below.
 
 ## Topics
 
-### appending
-- ``appending(_:)-3mlku``
-- ``appending(_:)-3nv0z``
-
-### callAsFunction
-- ``callAsFunction(_:)-10f8r``
-- ``callAsFunction(_:)-3v7uy``
-- ``callAsFunction(_:)-1c4ez``
-- ``callAsFunction(_:)-6gpno``
-- ``callAsFunction(_:)-6z4bu``
-- ``callAsFunction(_:)-22s3f``
-- ``callAsFunction(_:)-5ubp1``
-- ``callAsFunction(_:)-6mnp9``
+- ``appending(_:)``
+- ``callAsFunction(_:)``
 
 ### map
-- ``map(_:)-5ky43``
-- ``map(_:)-17ar9``
-- ``map(_:)-3ybcw``
-- ``map(_:)-5b624``
-- ``map(_:)-6u36y``
-- ``map(_:)-7vvm9``
+- ``map(_:)-9rz4b``
+- ``map(_:)-138ae``
+- ``map(_:)-3zcxi``
