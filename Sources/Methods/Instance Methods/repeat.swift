@@ -4,5 +4,5 @@
 @inlinable public func `repeat`<each Element, Value>(
   _ tuple: (repeat each Element)
 ) -> (Value) -> (repeat Repeat<Value, each Element>) {
-  { value in (repeat { _ in value } ((each Element).self)) }
+  { `repeat`((repeat each Element).self, $0) }
 }
