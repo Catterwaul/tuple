@@ -65,6 +65,7 @@ That's how the package authors think about the functions cataloged below.
 
 - ``appending(_:)``
 - ``callAsFunction(_:)``
+- ``repeat(_:)``
 
 ### map
 - ``map(_:)-9rz4b``

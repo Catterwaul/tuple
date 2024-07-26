@@ -34,6 +34,8 @@ All of these type aliases end with a number. But, for example, a `Tuple3` does n
 
 ## Topics
 
+- ``Repeat``
+
 ### Tuple
 - ``Tuple2``
 - ``Tuple3``

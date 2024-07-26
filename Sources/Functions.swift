@@ -1,4 +1,3 @@
-
 /// A tuple of pairs built out of two underlying tuples.
 ///
 /// - Note: Unlike `zip` for sequences, these two tuples are required to have the same count.

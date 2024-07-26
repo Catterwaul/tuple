@@ -39,6 +39,7 @@ That's how the package authors think about the functions cataloged below.
 ## Topics
 
 - ``enumerated(_:)``
+- ``isEmpty(_:)``
 
 ### prefix
 - ``prefix(_:)-931zj``
