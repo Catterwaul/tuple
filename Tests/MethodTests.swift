@@ -53,4 +53,10 @@ import Tuplé
       try map(tuple4)(add1) == (1, 2, 3, 4)
     )
   }
+
+  @Test func test_repeat() throws {
+    let value = "💰"
+    #expect(isEmpty(`repeat`(())(value)))
+    #expect(`repeat`((true, 2, "3️⃣"))(value) == (value, value, value))
+  }
 }
