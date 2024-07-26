@@ -1,7 +1,7 @@
 import Testing
 import Tuplé
 
-@Suite private struct PropertyTests {
+struct PropertyTests {
   @Test func test_enumerated() {
     let enumerated = enumerated(("0️⃣", 1, 2.0))
     #expect(enumerated.0 == (offset: 0, element: "0️⃣"))

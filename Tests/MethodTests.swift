@@ -1,7 +1,7 @@
 import Testing
 import Tuplé
 
-@Suite private struct MethodTests {
+struct MethodTests {
   @Test func test_callAsFunction() throws {
     struct 🇪🇨: Equatable {
       // MARK: Equatables

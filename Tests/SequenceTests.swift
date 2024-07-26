@@ -1,7 +1,7 @@
 import Testing
 import Tuplé
 
-@Suite private struct SequenceTests {
+struct SequenceTests {
   @Test func tuplePrefix() throws {
     let array = [0, 1, 2, 3]
     #expect(try array.tuplePrefix() == (0, 1))
