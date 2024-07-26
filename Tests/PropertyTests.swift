@@ -9,6 +9,14 @@ import Tuplé
     #expect(enumerated.2 == (offset: 2, element: 2.0))
   }
 
+  @Test func test_isEmpty() throws {
+    let void: Void = (())
+    #expect(isEmpty(void))
+
+    let twoVoids = ((), ())
+    #expect(!isEmpty(twoVoids))
+  }
+
   @Test func test_prefix() {
     let tuple2 = (0, 1)
     let tuple3 = (0, 1, 2)

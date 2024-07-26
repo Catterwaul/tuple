@@ -29,7 +29,7 @@ Otherwise, the cap for support is tuples with **4 elements**. This is the de fac
 
 ##### Usage Examples
 
-You've got the source code here, so aside from reading this documentation, see the **Tests** folder for example usage! 😺
+You've got the source code, so aside from reading this documentation, see the **Tests** folder for example usage! 😺
 
 ## Topics
 
