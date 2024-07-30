@@ -35,6 +35,16 @@ struct InstanceMethodTests {
     _ = try callAsFunction(getThrowingProperties)(🇪🇨())
   }
 
+  @Test func test_forEach() throws {
+    var value = 0
+    func add(_ summand: Int) { value += summand }
+    forEach((1, 2))((add, add))
+    #expect(value == 3)
+
+    forEach(1, add)
+    #expect(value == 4)
+  }
+
   @Test func test_map_transforms() throws {
     #expect(map((1, 1), transforms: { $0 + 1 }, { $0 + 2 }) == (2, 3))
   }

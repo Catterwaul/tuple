@@ -67,6 +67,10 @@ That's how the package authors think about the functions cataloged below.
 - ``callAsFunction(_:)``
 - ``repeat(_:)``
 
+### forEach
+- ``forEach(_:)``
+- ``forEach(_:_:)``
+
 ### map
 - ``map(_:)-9rz4b``
 - ``map(_:)-138ae``

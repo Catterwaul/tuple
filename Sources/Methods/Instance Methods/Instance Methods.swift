@@ -23,6 +23,28 @@
   { (repeat try (each transform)($0)) }
 }
 
+/// Call a closure on each element of a tuple.
+/// - Parameters:
+///   - input: A tuple of inputs.
+/// - Bug: "Instance method syntax" is not currently supported by the compiler, if an error is involved.
+/// Use the stopgap ``forEach(_:_:)`` overload for those cases.
+@inlinable public func forEach<each Input>(
+  _ input: (repeat each Input)
+) -> ((repeat (each Input) -> Void)) -> Void {
+  { body in repeat (each body)(each input) }
+}
+
+/// Call a closure on each element of a tuple.
+/// - Parameters:
+///   - input: A tuple of inputs.
+///   - body: One closure for each input element.
+@inlinable public func forEach<each Input, Error>(
+  _ input: (repeat each Input),
+  _ body: (repeat (each Input) throws(Error) -> Void)
+) throws(Error) {
+  repeat try (each body)(each input)
+}
+
 /// Transform each element of a tuple.
 /// - Parameters:
 ///   - input: A tuple of inputs.
