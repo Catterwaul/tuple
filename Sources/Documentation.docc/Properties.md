@@ -41,6 +41,11 @@ That's how the package authors think about the functions cataloged below.
 - ``enumerated(_:)``
 - ``isEmpty(_:)``
 
+### flattened
+- ``flattened(_:)-6s3ka``
+- ``flattened(_:)-84b0s``
+- ``flattened(_:)-l8wf``
+
 ### prefix
 - ``prefix(_:)-931zj``
 - ``prefix(_:)-2oq89``

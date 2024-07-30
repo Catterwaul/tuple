@@ -3,10 +3,22 @@ import Tuplé
 
 struct PropertyTests {
   @Test func test_enumerated() {
-    let enumerated = enumerated(("0️⃣", 1, 2.0))
-    #expect(enumerated.0 == (offset: 0, element: "0️⃣"))
-    #expect(enumerated.1 == (offset: 1, element: 1))
-    #expect(enumerated.2 == (offset: 2, element: 2.0))
+    #expect(
+      enumerated(("0️⃣", 1, 2.0)) == (
+        (offset: 0, element: "0️⃣"),
+        (offset: 1, element: 1),
+        (offset: 2, element: 2)
+      )
+    )
+  }
+
+  @Test func test_flattened() {
+    let tuple2 = ((00, 01), (10, 11))
+    #expect(flattened(tuple2) == (00, 01, 10, 11))
+    let tuple3 = appending(tuple2)((20, 21))
+    #expect(flattened(tuple3) == (00, 01, 10, 11, 20, 21))
+    let tuple4 = appending(tuple3)((30, 31))
+    #expect(flattened(tuple4) == (00, 01, 10, 11, 20, 21, 30, 31))
   }
 
   @Test func test_isEmpty() throws {
