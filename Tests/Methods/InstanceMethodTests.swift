@@ -35,7 +35,11 @@ struct InstanceMethodTests {
     _ = try callAsFunction(getThrowingProperties)(🇪🇨())
   }
 
-  @Test func test_map() throws {
+  @Test func test_map_transforms() throws {
+    #expect(map((1, 1), transforms: { $0 + 1 }, { $0 + 2 }) == (2, 3))
+  }
+
+  @Test func test_map_vectuple() throws {
     let tuple4 = (0, 1, 2, 3)
 
     #expect(

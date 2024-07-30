@@ -23,6 +23,20 @@
   { (repeat try (each transform)($0)) }
 }
 
+/// Transform each element of a tuple.
+/// - Parameters:
+///   - input: A tuple of inputs.
+///   - transform: One closure for each input element.
+/// - Bug: ["Instance method syntax" is not currently supported by the compiler.](https://github.com/swiftlang/swift/issues/75563)
+/// - Bug: [`transform` being a tuple is not currently supported by the compiler.](https://github.com/swiftlang/swift/issues/75558)
+@_documentation(visibility: private) // DocC can't cope with this signature.
+@inlinable public func map<each Input, each Output, Error>(
+  _ input: (repeat each Input),
+  transforms transform: repeat (each Input) throws(Error) -> each Output
+) throws(Error) -> (repeat each Output) {
+  (repeat try (each transform)(each input))
+}
+
 /// Repeat a value to match the shape of a tuple.
 /// - Parameters:
 ///   - tuple: The tuple that defines how many `values` will be returned.
