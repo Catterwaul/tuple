@@ -1,8 +1,15 @@
-/// Expands `Value` to the shape of `Pack`
-/// - Important: This is ***not*** just `Value`.
-/// It's more like `(repeat each Value)`, which can't be represented in Swift yet.
-/// This typealias is the workaround for that unimplemented feature.
-public typealias Repeat<Value, each Pack> = Value
+/// Expands a type to the shape of a pack.
+///
+/// By itself, this is just `Value`.
+/// But it can be used to represent "`(repeat each Value)`",
+/// which can't actually be represented in Swift yet.
+/// This type alias is the workaround for that unimplemented feature.
+///
+/// Its usage will look like
+/// ```swift
+/// (repeat Each<Value, each Element>)
+/// ```
+public typealias Each<Value, each Element> = Value
 
 // MARK: - Tuple
 

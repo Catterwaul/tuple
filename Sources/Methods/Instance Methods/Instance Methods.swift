@@ -64,6 +64,6 @@
 ///   - tuple: The tuple that defines how many `values` will be returned.
 @inlinable public func `repeat`<each Element, Value>(
   _ tuple: (repeat each Element)
-) -> (Value) -> (repeat Repeat<Value, each Element>) {
+) -> (Value) -> (repeat Each<Value, each Element>) {
   { `repeat`($0, (repeat each Element).self) }
 }

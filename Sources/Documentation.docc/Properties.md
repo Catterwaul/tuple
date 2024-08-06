@@ -38,9 +38,9 @@ That's how the package authors think about the functions cataloged below.
 
 ## Topics
 
-- ``count(_:)``
+- ``count(_:)-22au4``
 - ``enumerated(_:)``
-- ``isEmpty(_:)``
+- ``isEmpty(_:)-ls06``
 
 ### flattened
 - ``flattened(_:)-6s3ka``

@@ -1,10 +1,10 @@
-# Type Methods and Operators
+# Type Methods, Properties, and Operators
 
 Functions that would be type methods if tuples could be extended.
 
 ## 
 
-Some of the functions in this package should be considered "static methods". If tuples were a named type, we could extend them with real methods that incorporate dot syntax.
+Some of the functions in this package should be considered "type", AKA "static". If tuples were a named type, we could extend them with real methods that incorporate dot syntax.
 
 For example, we'd *like* to be able to write:  
 
@@ -24,6 +24,8 @@ It would be nice to nest operators within tuples. Fortunately, it looks exactly 
 
 ## Topics
 
+- ``count(_:)-kjt3``
+- ``isEmpty(_:)-81s9c``
 - ``repeat(_:_:)``
 - ``==(_:_:)``
 - ``!=(_:_:)``

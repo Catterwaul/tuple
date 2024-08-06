@@ -36,5 +36,5 @@ You've got the source code, so aside from reading this documentation, see the **
 - <doc:Type-Aliases>
 - <doc:Properties>
 - <doc:Instance-Methods>
-- <doc:Type-Methods>
+- <doc:Type>
 - ``Swift/Sequence``

@@ -7,6 +7,11 @@ struct PropertyTests {
     #expect(count(1) == 1)
     #expect(count((1, 2)) == 2)
     #expect(count((1, 2, 3)) == 3)
+
+    #expect(count(Void.self) == 0)
+    #expect(count(Int.self) == 1)
+    #expect(count((Int, Int).self) == 2)
+    #expect(count((Int, Int, Int).self) == 3)
   }
 
   @Test func test_enumerated() {
@@ -29,9 +34,11 @@ struct PropertyTests {
   }
 
   @Test func test_isEmpty() throws {
+    #expect(isEmpty(Void.self))
     let void: Void = (())
     #expect(isEmpty(void))
 
+    #expect(!isEmpty((Void, Void).self))
     let twoVoids = ((), ())
     #expect(!isEmpty(twoVoids))
   }
