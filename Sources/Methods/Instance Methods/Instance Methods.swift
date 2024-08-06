@@ -65,5 +65,5 @@
 @inlinable public func `repeat`<each Element, Value>(
   _ tuple: (repeat each Element)
 ) -> (Value) -> (repeat Repeat<Value, each Element>) {
-  { `repeat`((repeat each Element).self, $0) }
+  { `repeat`($0, (repeat each Element).self) }
 }
