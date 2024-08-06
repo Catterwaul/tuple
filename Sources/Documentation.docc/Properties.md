@@ -38,6 +38,7 @@ That's how the package authors think about the functions cataloged below.
 
 ## Topics
 
+- ``count(_:)``
 - ``enumerated(_:)``
 - ``isEmpty(_:)``
 

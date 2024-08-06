@@ -1,3 +1,12 @@
+/// The number of elements in a tuple.
+@inlinable public func count<each Element>(
+  _ element: (repeat each Element)
+) -> Int {
+  var count = 0
+  (repeat { _ in count += 1 } ((each Element).self))
+  return count
+}
+
 /// An enumerated version of a tuple.
 ///
 /// A tuple's elements can be accessed "with integers", like `.0` and `.1`,

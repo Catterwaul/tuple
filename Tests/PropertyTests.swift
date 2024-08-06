@@ -2,6 +2,13 @@ import Testing
 import Tuplé
 
 struct PropertyTests {
+  @Test func test_count() {
+    #expect(count(()) == 0)
+    #expect(count(1) == 1)
+    #expect(count((1, 2)) == 2)
+    #expect(count((1, 2, 3)) == 3)
+  }
+
   @Test func test_enumerated() {
     #expect(
       enumerated(("0️⃣", 1, 2.0)) == (
