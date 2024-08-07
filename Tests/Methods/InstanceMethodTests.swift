@@ -68,6 +68,11 @@ struct InstanceMethodTests {
     )
   }
 
+  @Test func test_prepedning() throws {
+    #expect(prepending(())("🐈‍⬛") == "🐈‍⬛")
+    #expect(prepending((2, 3.0))("1️⃣") == ("1️⃣", 2, 3))
+  }
+
   @Test func test_repeat() throws {
     let value = "💰"
     #expect(isEmpty(`repeat`(())(value)))
