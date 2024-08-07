@@ -64,6 +64,7 @@ That's how the package authors think about the functions cataloged below.
 ## Topics
 
 - ``appending(_:)``
+- ``prepending(_:)``
 - ``callAsFunction(_:)``
 - ``repeat(_:)``
 

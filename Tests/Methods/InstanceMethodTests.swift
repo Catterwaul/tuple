@@ -13,13 +13,10 @@ struct InstanceMethodTests {
       let breaksEquatableSynthesis: Void = ()
 
       static func == (ecuador0: Self, ecuador1: Self) -> Bool {
-        let getProperties = (
-          \.eq as (Self) -> _,
-          \.u as (Self) -> _,
-          \.al as (Self) -> _,
-          \.s as (Self) -> _
+        let getProperties = callAsFunction(
+          (\Self.eq as (_) -> _, \.u, \.al, \.s)
         )
-        return callAsFunction(getProperties)(ecuador0) == callAsFunction(getProperties)(ecuador1)
+        return getProperties(ecuador0) == getProperties(ecuador1)
       }
     }
 
@@ -66,6 +63,11 @@ struct InstanceMethodTests {
     #expect(
       try map(tuple4)(add1) == (1, 2, 3, 4)
     )
+  }
+
+  @Test func test_prepending() throws {
+    #expect(prepending(())("🐈‍⬛") == "🐈‍⬛")
+    #expect(prepending((2, 3.0))("1️⃣") == ("1️⃣", 2, 3))
   }
 
   @Test func test_repeat() throws {

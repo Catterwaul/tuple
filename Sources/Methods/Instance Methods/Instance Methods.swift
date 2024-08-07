@@ -1,8 +1,15 @@
 /// Adds an element to the end of a tuple.
 @inlinable public func appending<each Element, Last>(
   _ prefix: (repeat each Element)
-) -> (_ last: Last) -> (repeat each Element, Last) {
+) -> (Last) -> (repeat each Element, Last) {
   { last in (repeat each prefix, last) }
+}
+
+/// Adds an element to the beginning of a tuple.
+@inlinable public func prepending<First, each Element>(
+  _ suffix: (repeat each Element)
+) -> (First) -> (First, repeat each Element) {
+  { first in (first, repeat each suffix) }
 }
 
 /// Call multiple functions on one input.
