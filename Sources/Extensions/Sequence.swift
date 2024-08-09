@@ -33,7 +33,7 @@ private extension Sequence {
 
     do {
       func next() throws -> Self.Element {
-        let next = try iterator.next().wrappedValue()
+        let next = try iterator.next().get()
         actualCount += 1
         return next
       }
