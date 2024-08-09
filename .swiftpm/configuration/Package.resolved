@@ -1,5 +1,5 @@
 {
-  "originHash" : "65fd49ee49c99c88a45b2e7c293afe49e3a11e3db5a121d8226ca4aaf1df7871",
+  "originHash" : "48a1bafc7c51c8acbbd491c6c0358b2dd7fc814bef6e76622ce471ac4a0a671d",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -25,7 +25,7 @@
       "location" : "https://github.com/Catterwaul/Thrappture",
       "state" : {
         "branch" : "main",
-        "revision" : "9406628331a72335395e49b4a7029098aa163f97"
+        "revision" : "e3f9d3b470d170c293a3ce4ae84df4a00996461b"
       }
     }
   ],
