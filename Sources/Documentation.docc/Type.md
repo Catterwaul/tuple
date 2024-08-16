@@ -27,5 +27,13 @@ It would be nice to nest operators within tuples. Fortunately, it looks exactly 
 - ``count(_:)-kjt3``
 - ``isEmpty(_:)-81s9c``
 - ``repeat(_:_:)``
+
+### "Equatable"
 - ``==(_:_:)``
 - ``!=(_:_:)``
+
+### "Comparable"
+- ``<(_:_:)``
+- ``<=(_:_:)``
+- ``>(_:_:)``
+- ``>=(_:_:)``
