@@ -17,6 +17,14 @@ struct TypeMethodTests {
     )
   }
 
+  @Test func test_chain() {
+    let chain1 = chain((00, 01), (10, 11))
+    #expect(chain1 == (00, 01, 10, 11))
+    let chain2 = chain(chain1, (20, 21))
+    #expect(chain2 == (00, 01, 10, 11, 20, 21))
+    #expect(chain(chain2, (30, 31)) == (00, 01, 10, 11, 20, 21, 30, 31))
+  }
+
   @Test func comparable() {
     let forward = (1, 2, 3, 4, 5, 6, 7, 8)
     #expect(!(forward < forward))

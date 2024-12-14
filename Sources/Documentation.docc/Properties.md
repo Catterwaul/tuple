@@ -43,6 +43,8 @@ That's how the package authors think about the functions cataloged below.
 - ``isEmpty(_:)-ls06``
 
 ### flattened
+`flattened` and [chain](<doc:chain(_:_:)>) are the same. `chain` is just the "variadic" version, not requiring its arguments to be in a tuple. 
+
 - ``flattened(_:)-6s3ka``
 - ``flattened(_:)-84b0s``
 - ``flattened(_:)-l8wf``
