@@ -28,6 +28,14 @@ It would be nice to nest operators within tuples. Fortunately, it looks exactly 
 - ``isEmpty(_:)-81s9c``
 - ``repeat(_:_:)``
 
+### chain
+
+`chain` and [flattened](<doc:flattened(_:)-6s3ka>) are the same. `chain` is just the "variadic" version, not requiring its arguments to be in a tuple.    
+
+- ``chain(_:_:)``
+- ``chain(_:_:_:)``
+- ``chain(_:_:_:_:)``
+
 ### "Equatable"
 - ``==(_:_:)``
 - ``!=(_:_:)``
