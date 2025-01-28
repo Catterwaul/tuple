@@ -37,4 +37,5 @@ You've got the source code, so aside from reading this documentation, see the **
 - <doc:Properties>
 - <doc:Instance-Methods>
 - <doc:Type>
+- <doc:Pack>
 - ``Swift/Sequence``

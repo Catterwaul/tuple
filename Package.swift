@@ -7,7 +7,7 @@ let name = "Tuplé"
 
 _ = Package(
   name: name,
-  platforms: [.iOS(.v13), .macOS(.v10_15)],
+  platforms: [.iOS(.v17), .macOS(.v14)],
   products: [.library(name: name, targets: [name])],
   dependencies: dependencies.map(\.package),
   targets: [
